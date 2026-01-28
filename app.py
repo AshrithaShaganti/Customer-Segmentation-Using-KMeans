@@ -93,7 +93,7 @@ if run_clustering:
     # -----------------------------
     st.subheader("📊 Cluster Visualization")
 
-    fig, ax = plt.subplots(figsize=(8, 6))
+    fig, ax = plt.subplots()  # 🔥 no fixed figsize
 
     ax.scatter(
         df[feature_x],
@@ -120,7 +120,8 @@ if run_clustering:
     ax.set_title("Customer Segments")
     ax.legend()
 
-    st.pyplot(fig)
+    # 🔥 responsive plot
+    st.pyplot(fig, use_container_width=True)
 
     # -----------------------------
     # Cluster Summary Section
